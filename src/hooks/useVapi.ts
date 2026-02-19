@@ -13,7 +13,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Vapi from "@vapi-ai/web";
-import { assistantConfig } from "@/lib/assistant";
+import { buildAssistantConfig } from "@/lib/assistant";
 
 export type CallStatus = "idle" | "connecting" | "active";
 
@@ -141,21 +141,15 @@ export function useVapi() {
         setCreatedEvent(null);
 
         try {
-            // Deep clone and set server URL on the tool
-            const config = JSON.parse(JSON.stringify(assistantConfig));
+            // Always use the current page origin as the webhook URL.
+            // On Vercel this will be the real production domain.
+            // On localhost this will be localhost (webhook won't work, but call will start).
+            const serverUrl = `${window.location.origin}/api/vapi/webhook`;
 
-            // VAPI requires a public URL even for validation. 
-            // If on localhost, we use a placeholder so the call can at least start.
-            const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
-            const serverUrl = isLocal
-                ? "https://your-app.vercel.app/api/vapi/webhook" // Placeholder for validation
-                : `${window.location.origin}/api/vapi/webhook`;
+            // Build the full assistant config with the server URL baked in
+            const config = buildAssistantConfig(serverUrl);
 
-            if (config.model?.tools?.[0]?.server) {
-                config.model.tools[0].server.url = serverUrl;
-            }
-
-            await vapiRef.current.start(config);
+            await vapiRef.current.start(config as any);
         } catch (error) {
             console.error("Failed to start call:", error);
             setStatus("idle");
