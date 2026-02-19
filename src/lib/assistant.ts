@@ -32,8 +32,8 @@ export function buildAssistantConfig(serverUrl: string) {
         firstMessage:
             "Hey there! I'm your scheduling assistant. I can help you set up a meeting on your calendar. What's your name?",
         model: {
-            provider: "openai" as const,
-            model: "gpt-4o-mini",
+            provider: "google" as const,
+            model: "gemini-2.0-flash",
             messages: [
                 {
                     role: "system" as const,
