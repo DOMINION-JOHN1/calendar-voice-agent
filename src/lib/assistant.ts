@@ -9,8 +9,8 @@ export const assistantConfig = {
     firstMessage:
         "Hey there! I'm your scheduling assistant. I can help you set up a meeting on your calendar. What's your name?",
     model: {
-        provider: "google" as const,
-        model: "gemini-2.0-flash", // Reverting to stable
+        provider: "openai" as const,
+        model: "gpt-4o-mini",
         messages: [
             {
                 role: "system" as const,
