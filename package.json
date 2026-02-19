@@ -1,0 +1,30 @@
+{
+    "name": "valkara-ai-voice-scheduler",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@vapi-ai/web": "^2.2.0",
+        "googleapis": "^144.0.0",
+        "next": "^15.1.0",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
+    },
+    "devDependencies": {
+        "@tailwindcss/postcss": "^4.2.0",
+        "@types/node": "^22.0.0",
+        "@types/react": "^19.0.0",
+        "@types/react-dom": "^19.0.0",
+        "autoprefixer": "^10.4.24",
+        "eslint": "^9.0.0",
+        "eslint-config-next": "^15.1.0",
+        "postcss": "^8.5.6",
+        "tailwindcss": "^4.2.0",
+        "typescript": "^5.7.0"
+    }
+}
