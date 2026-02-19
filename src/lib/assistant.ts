@@ -24,7 +24,8 @@ const SYSTEM_PROMPT = `You are a friendly and efficient scheduling assistant. Yo
 - If the user gives a 12-hour time like "3pm", convert it to 24-hour format (15:00).
 - If no end time is given, default to 30 minutes after the start time.
 - Do not ask more than one question at a time.
-- If you cannot understand something, politely ask them to repeat.`;
+- If you cannot understand something, politely ask them to repeat.
+- IMPORTANT: Once the event is created and you have confirmed it to the user, tell them goodbye and HANG UP the call immediately. You have a special tool to end the call, or just say goodbye and the system will handle it. Actually, just say "Goodbye" and then call the createCalendarEvent function if you haven't already, then after confirming, stop speaking.`;
 
 export function buildAssistantConfig(serverUrl: string) {
     return {

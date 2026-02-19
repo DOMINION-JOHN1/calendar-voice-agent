@@ -46,8 +46,13 @@ export async function createCalendarEvent(
 
     // Validate env vars
     const clientEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-    const privateKey = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n");
+    const rawPrivateKey = process.env.GOOGLE_PRIVATE_KEY;
     const calendarId = process.env.GOOGLE_CALENDAR_ID;
+
+    // Handle potential surrounding quotes from Vercel/env logic
+    const privateKey = rawPrivateKey
+        ? rawPrivateKey.replace(/^["']|["']$/g, "").replace(/\\n/g, "\n")
+        : undefined;
 
     if (!clientEmail || !privateKey || !calendarId) {
         console.error("Missing Google Calendar environment variables");
