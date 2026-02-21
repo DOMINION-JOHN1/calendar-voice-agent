@@ -101,15 +101,19 @@ This project uses the **Google Calendar API** with a **Service Account** for bac
 
 ## � Proof of Execution
 
-### 1. VAPI Dashboard (Transcripts & Successful Tool Call)
+### 1. The Voice Scheduling Agent UI
+The beautifully designed, glassmorphic UI where the conversation starts.
+<img width="900" alt="Voice Agent Website" src="./public/assets/website.png">
+
+### 2. VAPI Dashboard (Transcripts & Successful Tool Call)
 The VAPI call logs show the AI confirming the date, time, and title, followed by the successful execution of the `CreateCalendarEvent` tool.
 <img width="900" alt="VAPI Call Log Tool Execution" src="./public/assets/vapi-log.png">
 
-### 2. Vercel Serverless Function Logs
+### 3. Vercel Serverless Function Logs
 The Next.js backend logs confirm receiving the webhook and successfully authenticating with the Google Calendar API to generate the event ID.
 <img width="900" alt="Vercel Function Webhook Success" src="./public/assets/vercel-log.png">
 
-### 3. Google Calendar Success
+### 4. Google Calendar Success
 The final result: The event appears instantly on the target Google Calendar.
 <img width="900" alt="Google Calendar Event Created" src="./public/assets/calendar.png">
 
