@@ -87,8 +87,8 @@ export function buildAssistantConfig(serverUrl: string) {
             ],
         },
         voice: {
-            provider: "playht" as const,
-            voiceId: "jennifer", // Standard natural female voice that uses VAPI credits
+            provider: "openai" as const,
+            voiceId: "alloy", // Extremely stable default OpenAI voice that reliably uses VAPI credits
         },
         transcriber: {
             provider: "deepgram" as const,
