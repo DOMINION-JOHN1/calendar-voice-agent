@@ -87,8 +87,8 @@ export function buildAssistantConfig(serverUrl: string) {
             ],
         },
         voice: {
-            provider: "cartesia" as const,
-            voiceId: "a0e99861-dfaf-4ad1-a9d0-7ec8293796d1", // Professional, natural female voice (British)
+            provider: "playht" as const,
+            voiceId: "jennifer", // Standard natural female voice that uses VAPI credits
         },
         transcriber: {
             provider: "deepgram" as const,
