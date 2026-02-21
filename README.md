@@ -107,7 +107,8 @@ The beautifully designed, glassmorphic UI where the conversation starts.
 
 ### 2. VAPI Dashboard (Transcripts & Successful Tool Call)
 The VAPI call logs show the AI confirming the date, time, and title, followed by the successful execution of the `CreateCalendarEvent` tool.
-<img width="900" alt="VAPI Call Log Tool Execution" src="./public/assets/vapi-log.png">
+<img width="900" alt="VAPI Call Log Tool Execution 1" src="./public/assets/vapi-log.png">
+<img width="900" alt="VAPI Call Log Tool Execution 2" src="./public/assets/vapi-log2.png">
 
 ### 3. Vercel Serverless Function Logs
 The Next.js backend logs confirm receiving the webhook and successfully authenticating with the Google Calendar API to generate the event ID.
